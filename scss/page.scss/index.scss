@@ -1,0 +1,611 @@
+@import "../mixin";
+
+h3{
+    font-size: 18px;
+    font-weight: 700;
+    color:black;
+}
+/*-----header-----*/
+#header{
+    position: fixed;
+    z-index: 986;
+    box-shadow:0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2) ;
+    background-color: #ffffff;
+    color: rgb(0,0,0);
+    display: block;
+    width:100%;
+    transition: box-shadow 250ms;
+    // line-height: 27px;
+  }
+  .navbar{
+    box-sizing: border-box;
+    // position: relative;
+    display: flex;
+    justify-content: space-between;
+    // min-width: min-content;
+    height: 64px;
+    width: 100%;
+    padding: 8px;
+    @include sm-width(){
+      padding: 4px;
+      padding-left: 8px;
+      height: 56px;
+    }
+  }
+  .navbar_head{
+    @include sm-width(){
+      padding-right: 14px;
+      max-width: 480px;
+    }
+    padding-right: 30px;
+    // width: 20%;
+    width: auto;
+    min-width: 120px;
+    max-width: 240px;   
+    height: 48px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+    // background-color: blue;
+  }
+  .navbar_head_icon{
+    display:inline-block;
+    width: 48px;
+    height: 48px;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding: 12px;
+    margin-left: 6px;
+    margin-top: 10px;
+  }
+  .navbar_head_google{
+    margin-top: 10px;
+  }
+  .navbar_head_title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #5f6368;
+    padding-left:5px ;
+  }
+  .navbar_content{
+    @include sm-width(){
+      width: auto;
+      max-width: 42px;
+    }
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    // background-color: yellow;
+    width:auto;
+    min-width: 42px;
+  }
+  .navbar_search{
+    @include sm-width(){
+      background-color: transparent;
+      max-width: 42px;
+      margin: 0px;
+    }
+    background-color:#f1f3f4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 48px;
+    width: 90%;
+    max-width: 720px;
+
+    
+  }
+  .navbar_search_sicon{
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    padding-top: 16px;
+    padding-left: 16px;
+    margin-left: 8px;
+    color: #5f6368;
+  }
+  .navbar_search_bar{
+    @include sm-width(){
+      display:none;
+    }
+    @include md-width(){
+      max-width: 120px;
+      
+    }
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      width: 100%;
+      min-width: 120px;
+      border-color:transparent ;
+      background-color: transparent;
+  }
+  
+  .navbar_search_dicon{
+    @include sm-width(){
+      display:none;
+    }
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    color: #5f6368;
+    margin-left: 20px;
+  }
+  .navbar_search_dicon i{
+    display: flex;
+    align-items: center;  
+    @include sm-width(){
+    display:none;  
+    }
+  }
+  .navbar_footer{
+    @include sm-width(){
+      max-width: 48px;
+      padding:0px;
+    }
+    @include lg-width(){
+      max-width: 90px;
+      padding-right:4px;
+    }
+    width: auto;
+    min-width: 48px;
+    max-width: 210px;
+    padding-right:4px;
+    padding-left: 4px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 48px;
+    // background-color: red;
+  }
+  .navbar_footer_icon{
+    @include sm-width(){
+      display: none;
+    }
+    display: flex;
+    color: #5f6368;
+    flex-direction: row;
+    width: 48px;
+    height: 48px;
+    padding: 15px;
+    // margin-left: 120px;
+  }
+  .navbar_footer_avatar{
+    width: 48px;
+    height: 48px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 2px;
+  }
+  .navbar_footer_avatar img{
+    border-radius: 50%;
+  }
+
+  .block{
+    @include sm-width(){
+       height: 56px;
+    }
+   height: 64px;
+   width: 100%;
+  }
+  
+  #body{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center ;
+  }
+  /*-----inside-----*/
+  #inside{
+    @include lg-width(){
+    margin: 0px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    }
+    display: grid;
+    grid-template-columns:repeat(12,minmax(0,1fr)) ;
+    grid-auto-flow: column;
+    column-gap: 32px;
+    align-items: stretch;
+    justify-content: center;
+
+    max-width: 1120px;
+    margin: auto;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  #main{
+    @include md-width(){
+    grid-column: span 12;
+    display: grid;
+    }
+    grid-column: span 8;
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-row-gap:16px;
+  }
+  #aside{
+    @include md-width(){
+    display:none;
+    }
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-row-gap:16px;
+    padding-top: 63px; 
+    
+  }
+  .HeadlineTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    margin-top: 24px;
+    grid-column-start:span 12;
+    grid-column-end: auto;
+  }
+  .HeadlineTitle_main{
+    display: flex;
+    flex-direction: row;
+    flex-grow:1;
+    align-items: center;
+    justify-content: stretch;
+  }
+  .HeadlineTitle_content{
+    display: flex;
+  }
+  .Headlines{
+    box-sizing: inherit;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+  }
+  .MoreHeadlines{
+    box-sizing: inherit;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .Headlinecard{
+      background-color: #ffffff;
+      border:1px solid #dadce0;
+      border-radius: 8px;
+      position: relative;
+      padding: 16px;
+      grid-column-start:span 12;
+      grid-column-end: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      // justify-content: stretch;
+  }
+  .Headlinecard_main{
+    display: flex;
+    flex-direction: row;
+    flex-grow:1;
+    align-items: center;
+    flex-wrap: nowrap;
+    // justify-content: stretch;
+  }
+  .Headlinecard_content{
+    display: flex;
+  }
+  .Headlinecard_mian_title{
+    color: #1a73e8;
+    font-weight: 600;
+    font-size:14px;
+    margin-right: 4px;
+    flex-wrap: nowrap;
+  }
+  .Headlinecard_mian_content{
+    color: #3c4043;
+    font-weight: 400;
+    font-size:14px;
+    line-height: 1.4;
+    flex-wrap: nowrap;
+  }
+  .Headlinecard_icon{
+    color: #5f6368;
+    height: 24px;
+    width: 24px;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .Headlineblock{
+      background-color: #ffffff;
+      border:1px solid #dadce0;
+      border-radius: 8px;
+      // position: relative;
+      grid-column-start:span 12;
+      grid-column-end: auto;
+      display: flex;
+      flex-direction: row;
+      min-height: 132px;
+      padding: 16px;
+  }
+  
+  .Headlineblock_artical{
+    display: flex;
+    flex-direction:column;
+    flex-grow: 1;
+  }
+  .Headlineblock_artical_title{
+      display: inline-flex;
+      flex-grow: 1;
+      flex-direction: column;
+      // padding:16px;
+      box-sizing: inherit;
+  }
+  .Headlineblock_artical_title a{
+    color: #202124;
+  }
+  .Headlineblock_artical_minititle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+  }
+  .Headlineblock_artical_minititle a {
+    font-size:12px;
+    color:#5f6368;
+    margin-right: 5px;
+  }
+  .Headlineblock_artical_minititle img{
+    width: 20px;
+  }
+   
+  .Headlineblock_picture a{
+    width: 100px;
+    height: 100px;
+  }  
+  .Headlineblock_picture img{
+      z-index: 1;
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      border:0px;
+    }
+
+  .weatherblock{
+    background-color: #ffffff;
+    border:1px solid #dadce0;
+    border-radius: 8px;
+    position: relative;
+    grid-column-start:span 12;
+    grid-column-end: auto;
+    display: flex;
+    flex-direction: column;
+    // height: 300px;
+  }
+  .aside_block_title{
+    height: auto;
+    border-bottom:1px solid #dadce0;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top:12.8px;
+    padding-bottom: 12.8px;
+  }
+  .beyond{
+    flex-direction: column;
+  }
+  .aside_block_title_title{
+    font-size: 15px;
+    font-weight: 800;
+    color: #5f6368;
+  }
+  .aside_block_title .weather{
+    flex-direction: row;
+    align-items: center;
+  }
+ 
+
+  .weather_icon{
+    color: #5f6368;
+  }
+
+  .weather_info{
+    height: 220px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .weather_info_today{
+    display: inline-block;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
+  .weather_info_today_number{
+    flex-grow: 1;
+  }
+  .weather_info_today_number_weather{
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+    padding-top: 15px;
+  }
+  .weather_info_today_number_cold{
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .weather_info_today_number_unit{
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .weather_info_today_picture{
+    width:70px;
+    height: 70px;
+    margin: 8px;
+  }
+
+  .weather_info_week{
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+  }
+  .weather_info_week_daily{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .weather_info_week_daily_day{
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .weather_info_week_daily_picture{
+    height: 2.175rem;
+    width: 2.175rem;
+    margin: 5px;
+  }
+  .weather_info_week_daily_high{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .weather_info_week_daily_low{
+    font-size: 12px;
+    color: #3c4043;
+  }
+    
+  .weather_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    margin-top: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 5.3px;
+    padding-bottom: 5.3px;
+    border-top:1px solid #dadce0;
+  }
+  .weather_footer_units{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .weather_footer_units_unit {
+    font-size: 12px;
+    text-align: center;
+    width: 22px;
+    height: 20px;
+    color: #5f6368;
+  }
+  .h{
+    border-right: 1px solid #5f6368;
+  }
+  .weather_footer_more{
+    font-size: 12px;
+  } 
+
+  .aside_block_title .fatch{
+    flex-direction: row;
+    align-items: center;
+  }
+  .asideblock{
+    background-color: rgb(248, 249, 250);
+    border:1px solid transparent;
+    border-radius: 8px;
+    position: relative;
+    grid-column-start:span 12;
+    grid-column-end: auto;
+    display: flex;
+    flex-direction: column;
+    //min-height: 442px;
+  }
+  .fatchblock{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .fatchblock_article{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fatchblock_article_title{
+    font-size: 14px;
+    font-weight: 600 ;
+    color: black;
+  }
+  .fatchblock_article_content{
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: 100 ;
+    color:#5f6368
+  }
+
+  .aside_block_title .beyond{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .beyondblock_lititle{
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #5f6368;
+  }
+  .beyondblock{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .beyondblock_article{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+  }
+  .beyondblock_article_title{
+    font-size: 14px;
+    font-weight: 600 ;
+    padding-right: 12px;
+    box-sizing: inherit;
+    color: black;
+  }
+  .beyondblock_article_content{
+    padding-top: 15px;
+    font-size: 12px;
+    font-weight: 100 ;
+    color:#5f6368
+  }
+  .beyondblock_picture img{
+    z-index:1;
+    border-radius: 8px;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
